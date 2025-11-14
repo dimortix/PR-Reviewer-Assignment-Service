@@ -1121,4 +1121,6 @@ TRUNCATE TABLE pull_request_reviewers, pull_requests, users, teams CASCADE;
 
 Тестовое задание для Авито (осенняя волна 2025)
 
+.env.example загрузил специально(не случайно)
+
 Надеюсь на апрув))
