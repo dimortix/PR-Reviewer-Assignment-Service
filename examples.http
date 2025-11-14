@@ -1,0 +1,133 @@
+
+GET http://localhost:8080/health
+
+
+POST http://localhost:8080/team/add
+Content-Type: application/json
+
+{
+  "team_name": "backend",
+  "members": [
+    {
+      "user_id": "u1",
+      "username": "Alexey",
+      "is_active": true
+    },
+    {
+      "user_id": "u2",
+      "username": "Dmitry",
+      "is_active": true
+    },
+    {
+      "user_id": "u3",
+      "username": "Igor",
+      "is_active": true
+    }
+  ]
+}
+
+
+GET http://localhost:8080/team/get?team_name=backend
+
+
+POST http://localhost:8080/team/update
+Content-Type: application/json
+
+{
+  "team_name": "backend",
+  "members": [
+    {
+      "user_id": "u1",
+      "username": "Alexey",
+      "is_active": true
+    },
+    {
+      "user_id": "u2",
+      "username": "Dmitry",
+      "is_active": true
+    },
+    {
+      "user_id": "u3",
+      "username": "Igor",
+      "is_active": true
+    },
+    {
+      "user_id": "u6",
+      "username": "Pavel",
+      "is_active": true
+    }
+  ]
+}
+
+
+POST http://localhost:8080/team/add
+Content-Type: application/json
+
+{
+  "team_name": "frontend",
+  "members": [
+    {
+      "user_id": "u4",
+      "username": "Mikhail",
+      "is_active": true
+    },
+    {
+      "user_id": "u5",
+      "username": "Sergey",
+      "is_active": true
+    }
+  ]
+}
+
+
+POST http://localhost:8080/users/setIsActive
+Content-Type: application/json
+
+{
+  "user_id": "u2",
+  "is_active": false
+}
+
+
+POST http://localhost:8080/pullRequest/create
+Content-Type: application/json
+
+{
+  "pull_request_id": "pr-1001",
+  "pull_request_name": "Add search feature",
+  "author_id": "u1"
+}
+
+
+GET http://localhost:8080/users/getReview?user_id=u2
+
+POST http://localhost:8080/pullRequest/reassign
+Content-Type: application/json
+
+{
+  "pull_request_id": "pr-1001",
+  "old_user_id": "u2"
+}
+
+
+POST http://localhost:8080/pullRequest/merge
+Content-Type: application/json
+
+{
+  "pull_request_id": "pr-1001"
+}
+
+
+POST http://localhost:8080/pullRequest/reassign
+Content-Type: application/json
+
+{
+  "pull_request_id": "pr-1001",
+  "old_user_id": "u3"
+}
+
+
+GET http://localhost:8080/stats
+
+
+GET http://localhost:8080/health
