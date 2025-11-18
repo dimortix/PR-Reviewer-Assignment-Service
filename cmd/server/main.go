@@ -17,9 +17,13 @@ import (
 	"pr-reviewer-service/internal/service"
 
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	// загружаем .env файл если он существует (игнорируем ошибку если файла нет)
+	_ = godotenv.Load()
+
 	cfg, err := config.Load()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to load config: %v\n", err)
